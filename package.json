@@ -1,0 +1,43 @@
+{
+  "name": "s16-wgetter-react",
+  "description": "Desktop app for section 16 wgetter",
+  "license": "MIT",
+  "homepage": ".",
+  "repository": "zacharynewton-wk/electron-playground",
+  "author": {
+    "name": "Zach Newton",
+    "email": "zach.newton@workiva.com"
+  },
+  "version": "0.1.0",
+  "main": "electron-starter.js",
+  "private": true,
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.0",
+    "electron-debug": "1.4.0",
+    "wget-improved": "^1.5.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "devtron": "1.4.0",
+    "electron": "1.7.11",
+    "electron-builder": "^19.52.1",
+    "mocha": "^4.0.1",
+    "npm-run-all": "^4.1.2",
+    "sinon": "^4.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron-dev": "ELECTRON_START_URL=http://localhost:3000 electron .",
+    "electron-start": "electron .",
+    "electron-build": "npm-run-all build-mac build-win build-linux",
+    "electron-build-mac": "electron-builder -m",
+    "electron-build-win": "electron-builder -w",
+    "electron-build-linux": "electron-builder -l",
+    "electron-dist": "electron-builder -mwl"
+  }
+}
