@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fefefe;
+    font-family: Helvetica, Arial, sans-serif;
+}
+* {
+    position: relative;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #66cc00;
+}
+nav > div {
+    display: flex;
+}
+.header-wrapper {
+    padding: 0 1rem;
+    justify-content: flex-start;
+    align-items: baseline;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+    color: #fefefe;
+}
+.header-wrapper h1 {
+    font-weight: 500;
+    font-size: 2rem;
+}
+.header-wrapper p {
+    font-weight: 300;
+    font-size: 1.1rem;
+    padding-left: 0.75rem;
+}
+.navbar-wrapper {
+    border-top: 1px solid #dedede;
+    justify-content: center;
+}
+
+nav span {
+    flex-basis: 10rem;
+    text-align: center;
+    flex-grow: 1;
+    display: inline-block;
+    width: 15rem;
+    border: 1px solid #dedede;
+    border-top: none;
+    background-color: #efefef;  
+    padding: 1rem 0.4rem;
+    transition: all 125ms ease;
+}
+nav span:not(.active):hover {
+    cursor: pointer;
+    background-color: #f4f4f4;
+    border-color: #f4f4f4;
+}
+nav span.active {
+    border-color: #fefefe;
+    background-color: #fefefe;
+}
+
+main section {
+    display: none;
+}
+main section.active {
+    display: block;
+}
+
+main .install-cards {
+    --card-width: 15rem;
+    --card-height: 17.5rem;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.install-card {
+    display: block;
+    background-color: #fff;
+    width: var(--card-width);
+    height: var(--card-height);
+    margin: 1rem 2rem;
+    border: 1px solid #dedede;
+    border-radius: 0.3rem;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.05);
+    transition: all 125ms ease;
+    overflow: hidden;
+}
+.install-card:hover {
+    box-shadow: 2px 3px 4px rgba(0,0,0,0.1);
+}
+.install-card:hover,
+.install-card:hover .footer {
+    border-color: #33a9ff;
+}
+.install-card:hover .footer{ 
+    background-color: #33a9ff;
+    color: #fefefe;
+}
+.install-card:hover .icon {
+    color: #33a9ff;
+}
+.install-card .icon {
+    width: var(--card-width);
+    height: var(--card-width);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 125ms ease;
+}
+.install-card .icon .icon-description {
+    position: absolute;
+    display: block;
+    bottom: 1rem;
+    width: var(--card-width);
+}
+.install-card .footer {
+    width: var(--card-width);
+    height: calc(var(--card-height) - var(--card-width));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #dedede;
+    transition: all 125ms ease;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+}
+.install-card .footer .fa-download {
+    margin-right: 0.5rem;
+}
+
+.install-card.suggested::after {
+    content: "Suggested";
+    display: block;
+    position: absolute;
+    top: 1rem;
+    width: var(--card-width);
+    color: #33a9ff;
+}
+
+.instructions {
+    padding: 1rem;
+}
+.instructions li {
+    line-height: 1.5em;
+}
+.instructions code {
+    background-color: #dedede;
+    border-radius: 3px;
+    padding: 2px 3px;
+}
+.instructions .disclaimer {
+    background-color: #fdeccb;
+    border: 1px solid #FDCE74;
+    color: #da9414;
+    border-radius: 3px;
+    padding: 2px 3px;
+}
+.instructions .disclaimer::before {
+    content: "Disclaimer: ";
+    font-weight: 600;
+}
