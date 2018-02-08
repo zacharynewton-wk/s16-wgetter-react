@@ -13,6 +13,7 @@
   "private": true,
   "dependencies": {
     "electron-debug": "1.4.0",
+    "eslint": "^4.17.0",
     "global": "^4.3.2",
     "node-sass-chokidar": "^0.0.3",
     "react": "^16.2.0",
@@ -25,6 +26,7 @@
     "devtron": "1.4.0",
     "electron": "1.7.11",
     "electron-builder": "^19.52.1",
+    "js-beautify": "^1.7.5",
     "mocha": "^4.0.1",
     "npm-run-all": "^4.1.2",
     "sinon": "^4.1.2"
@@ -43,6 +45,7 @@
     "electron-build-mac": "electron-builder -m",
     "electron-build-win": "electron-builder -w",
     "electron-build-linux": "electron-builder -l",
-    "electron-dist": "electron-builder -mwl"
+    "electron-dist": "electron-builder -mwl",
+    "format": "js-beautify --type js  -f ./src/*"
   }
 }

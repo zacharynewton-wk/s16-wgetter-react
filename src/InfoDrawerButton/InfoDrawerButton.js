@@ -5,6 +5,7 @@ class InfoDrawerButton extends Component {
   render () {
     return (
       <div className="InfoDrawerButton">
+        <i className="icon icon-lg icon-support-sign-corner"></i>
       </div>
     );
   }
