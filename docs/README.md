@@ -13,6 +13,10 @@ To install node dependencies:
 ```shell
 yarn install
 ```
+You might need to run
+```shell
+yarn add global node-sass-chokidar
+```
 
 At the time of the last update to this README, I am using web-skin via git, so to pull that in, run this script:
 ```shell

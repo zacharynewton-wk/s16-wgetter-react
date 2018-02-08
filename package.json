@@ -12,10 +12,12 @@
   "main": "electron-starter.js",
   "private": true,
   "dependencies": {
+    "electron-debug": "1.4.0",
+    "global": "^4.3.2",
+    "node-sass-chokidar": "^0.0.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.0",
-    "electron-debug": "1.4.0",
     "wget-improved": "^1.5.0"
   },
   "devDependencies": {

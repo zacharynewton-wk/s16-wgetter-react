@@ -1,13 +1,13 @@
 #!/bin/bash
 
 DEPENDENCIES="https://github.com/Workiva/web-skin.git"
-
-if [ ! -d "deps" ]; then
-    echo "Creating deps directory"
-    mkdir deps
+DIR="node_modules"
+if [ ! -d "$DIR" ]; then
+    echo "Creating src/deps directory"
+    mkdir "$DIR"
 fi
 
-cd deps
+cd $DIR
 
 for dep in "$DEPENDENCIES"; do
     dir=$(echo "$dep" | sed -E 's/.*\/([^\/]+)\.git$/\1 /')
