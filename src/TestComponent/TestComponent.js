@@ -1,9 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TestComponent from './TestComponent';
+import React, { Component } from 'react';
+import './TestComponent.css';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<TestComponent />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+class TestComponent extends Component {
+  render () {
+    return (
+      <div className="TestComponent">
+      </div>
+    );
+  }
+}
+
+export default TestComponent;

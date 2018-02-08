@@ -1,9 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import WgetterForm from './WgetterForm';
+import React, { Component } from 'react';
+import './WgetterForm.css';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<WgetterForm />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+class WgetterForm extends Component {
+  render () {
+    return (
+      <div className="WgetterForm">
+      </div>
+    );
+  }
+}
+
+export default WgetterForm;

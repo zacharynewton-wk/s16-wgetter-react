@@ -1,9 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import InfoDrawerButton from './InfoDrawerButton';
+import React, { Component } from 'react';
+import './InfoDrawerButton.css';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<InfoDrawerButton />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+class InfoDrawerButton extends Component {
+  render () {
+    return (
+      <div className="InfoDrawerButton">
+      </div>
+    );
+  }
+}
+
+export default InfoDrawerButton;

@@ -1,9 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import InfoDrawer from './InfoDrawer';
+import React, { Component } from 'react';
+import './InfoDrawer.css';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<InfoDrawer />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+class InfoDrawer extends Component {
+  render () {
+    return (
+      <div className="InfoDrawer">
+      </div>
+    );
+  }
+}
+
+export default InfoDrawer;

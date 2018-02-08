@@ -22,7 +22,7 @@ JSX="$COMP_DIR/$CNAME.js"
 touch "$JSX"
 SCSS="$COMP_DIR/$CNAME.scss"
 touch "$SCSS"
-JSTEST="$COMP_DIR/$CNAME.js"
+JSTEST="$COMP_DIR/$CNAME.test.js"
 touch "$JSTEST"
 
 LOWER_CNAME=$(echo "$CNAME" | awk '{print tolower($0)}')
