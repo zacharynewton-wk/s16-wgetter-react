@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { remote } from 'electron';
 import './DirectoryInput.css';
 import ClassNameBuilder from '../lib/ClassNameBuilder';
 
