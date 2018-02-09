@@ -4,7 +4,8 @@ import './InfoDrawerButton.css';
 class InfoDrawerButton extends Component {
   render () {
     return (
-      <div className="InfoDrawerButton">
+      <div className="InfoDrawerButton"
+        onClick={() => this.props.onClick()}>
         <i className="icon icon-lg icon-support-sign-corner"></i>
       </div>
     );

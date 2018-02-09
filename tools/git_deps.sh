@@ -22,3 +22,6 @@ for dep in "$DEPENDENCIES"; do
         git clone "$dep"
     fi
 done
+cd ../src/lib
+
+ln -s ../../node_modules/web-skin/dist/css/web-skin.min.css
