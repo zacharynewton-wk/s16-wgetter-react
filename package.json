@@ -13,9 +13,6 @@
   "private": true,
   "dependencies": {
     "electron-debug": "1.4.0",
-    "eslint": "^4.17.0",
-    "global": "^4.3.2",
-    "node-sass-chokidar": "^0.0.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.0",
@@ -28,6 +25,7 @@
     "electron-builder": "^19.52.1",
     "js-beautify": "^1.7.5",
     "mocha": "^4.0.1",
+    "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.1.2",
     "sinon": "^4.1.2"
   },

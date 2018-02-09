@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { remote } from 'electron';
 import './DirectoryInput.css';
 import ClassNameBuilder from '../lib/ClassNameBuilder';
+const electron = window.require('electron');
+const fs = electron.remote.require('fs');
+const ipcRenderer  = electron.ipcRenderer;
 
 class DirectoryInput extends Component {
   shouldComponentUpdate(nextProps, nextState) {
@@ -15,7 +18,7 @@ class DirectoryInput extends Component {
     let directoryDisplayClassNameBuilder = new ClassNameBuilder('directory-display');
     directoryDisplayClassNameBuilder.add('empty', empty);
     return (
-      <div className="DirectoryInput" onClick={() => this.selectDirectory()}>
+      <div id={this.props.id} className="DirectoryInput" onClick={() => this.selectDirectory()}>
         <span className={directoryDisplayClassNameBuilder.className}>
           {empty ? 'Select directory' : this.props.selectedDirectory}
         </span>
@@ -27,10 +30,11 @@ class DirectoryInput extends Component {
   }
 
   selectDirectory() {
-    if (!remote.getCurrentWindow() || !remote.dialog) {
+    const currentWindow = remote.getCurrentWindow();
+    if (!currentWindow || !remote.dialog) {
       return new Error('No window or dialog created');
     }
-    let path = remote.dialog.showOpenDialog(remote.getCurrentWindow(), {
+    let path = remote.dialog.showOpenDialog(currentWindow, {
       properties: ['openDirectory', 'createDirectory']
     });
     this.props.selectDirectory(path ? path[0] : null);
