@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { remote } from 'electron';
 import './DirectoryInput.css';
 import ClassNameBuilder from '../lib/ClassNameBuilder';
+// hacky workaround for fs not showing up
 const electron = window.require('electron');
+const remote = electron.remote;
 const fs = electron.remote.require('fs');
 const ipcRenderer  = electron.ipcRenderer;
 
@@ -44,6 +45,10 @@ class DirectoryInput extends Component {
 DirectoryInput.propTypes = {
   selectedDirectory: PropTypes.string,
   selectDirectory: PropTypes.func
+};
+
+DirectoryInput.defaultProps = {
+  selectDirectory: () => {}
 };
 
 export default DirectoryInput;
