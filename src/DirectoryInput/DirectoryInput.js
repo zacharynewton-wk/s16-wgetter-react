@@ -5,8 +5,8 @@ import ClassNameBuilder from '../lib/ClassNameBuilder';
 
 class DirectoryInput extends Component {
   shouldComponentUpdate(nextProps, nextState) {
-      return nextProps.selectedDirectory !== this.props.selectedDirectory ||
-        nextProps.selectDirectory !== this.props.selectDirectory;
+    return nextProps.selectedDirectory !== this.props.selectedDirectory ||
+      nextProps.selectDirectory !== this.props.selectDirectory;
   }
 
   render () {
@@ -16,10 +16,10 @@ class DirectoryInput extends Component {
     return (
       <div className="DirectoryInput" onClick={() => this.selectDirectory()}>
         <span className={directoryDisplayClassNameBuilder.className}>
-            {empty ? 'Select directory' : this.props.selectedDirectory}
+          {empty ? 'Select directory' : this.props.selectedDirectory}
         </span>
         <span className="directory-button">
-            <span className="icon icon-folder-open-g2"></span>
+          <span className="icon icon-folder-open-g2"></span>
         </span>
       </div>
     );
@@ -27,18 +27,18 @@ class DirectoryInput extends Component {
 
   selectDirectory() {
     if (!remote.getCurrentWindow() || !remote.dialog) {
-        return new Error('No window or dialog created');
+      return new Error('No window or dialog created');
     }
     let path = remote.dialog.showOpenDialog(remote.getCurrentWindow(), {
-        properties: ['openDirectory', 'createDirectory']
+      properties: ['openDirectory', 'createDirectory']
     });
     this.props.selectDirectory(path ? path[0] : null);
   }
 }
 
 DirectoryInput.propTypes = {
-    selectedDirectory: PropTypes.string,
-    selectDirectory: PropTypes.func
+  selectedDirectory: PropTypes.string,
+  selectDirectory: PropTypes.func
 };
 
 export default DirectoryInput;

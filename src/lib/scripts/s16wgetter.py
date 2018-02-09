@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-""" 
+"""
     Section 16 filing downloader
     To Use: ./s16wgetter <optional cik list, space separated>         to see the wget commands
             or
@@ -17,7 +17,7 @@ import os
 master_idx_files = []
 for filename in os.listdir(sys.argv[2]):
     master_idx_files.append(os.path.join(sys.argv[2], filename))
-    
+
 def pad_cik(cik):
     c = cik
     if len(c) < 10:

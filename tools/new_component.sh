@@ -2,20 +2,20 @@
 
 CNAME="$1"
 if [ -z $CNAME ]; then
-    echo "Component Name required."
-    exit
+  echo "Component Name required."
+  exit
 fi
 cd ./src
 DIR="."
 COMP_DIR="$DIR/$CNAME"
 if [ -d "$COMP_DIR" ]; then
-    echo ""
-    printf "Component directory $COMP_DIR exists, replace with new component? (yes/no) "
-    read confirmation
-    if [ $confirmation != "yes" ]; then
-        exit
-    fi
-    rm -rf "$COMP_DIR"
+  echo ""
+  printf "Component directory $COMP_DIR exists, replace with new component? (yes/no) "
+  read confirmation
+  if [ $confirmation != "yes" ]; then
+    exit
+  fi
+  rm -rf "$COMP_DIR"
 fi
 mkdir "$COMP_DIR"
 JSX="$COMP_DIR/$CNAME.js"
