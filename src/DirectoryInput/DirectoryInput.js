@@ -5,7 +5,9 @@ import ClassNameBuilder from '../lib/ClassNameBuilder';
 // hacky workaround for fs not showing up
 const electron = window.require('electron');
 const remote = electron.remote;
+// eslint-disable-next-line
 const fs = electron.remote.require('fs');
+// eslint-disable-next-line
 const ipcRenderer  = electron.ipcRenderer;
 
 class DirectoryInput extends Component {

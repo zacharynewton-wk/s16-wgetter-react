@@ -2,17 +2,18 @@
   "name": "s16-wgetter-react",
   "description": "Desktop app for section 16 wgetter",
   "license": "MIT",
-  "homepage": ".",
+  "homepage": "./",
   "repository": "zacharynewton-wk/electron-playground",
   "author": {
     "name": "Zach Newton",
     "email": "zach.newton@workiva.com"
   },
   "version": "0.1.0",
-  "main": "electron-starter.js",
+  "main": "public/electron.js",
   "private": true,
   "dependencies": {
     "electron-debug": "1.4.0",
+    "electron-is-dev": "^0.3.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.0",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "concurrently": "^3.5.1",
     "devtron": "1.4.0",
     "electron": "1.7.11",
     "electron-builder": "^19.52.1",
@@ -27,7 +29,8 @@
     "mocha": "^4.0.1",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.1.2",
-    "sinon": "^4.1.2"
+    "sinon": "^4.1.2",
+    "wait-on": "^2.1.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
@@ -37,13 +40,13 @@
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "electron-dev": "ELECTRON_START_URL=http://localhost:3000 electron .",
+    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && ELECTRON_START_URL=http://localhost:3000 electron .\"",
     "electron-start": "electron .",
     "electron-build": "npm-run-all electron-build-mac electron-build-win electron-build-linux",
-    "electron-build-mac": "electron-builder -m",
-    "electron-build-win": "electron-builder -w",
-    "electron-build-linux": "electron-builder -l",
-    "electron-dist": "electron-builder -mwl",
+    "electron-build-mac": "electron-builder -m --em.main=build/electron.js",
+    "electron-build-win": "electron-builder -w --em.main=build/electron.js",
+    "electron-build-linux": "electron-builder -l --em.main=build/electron.js",
+    "electron-dist": "electron-builder -mwl --em.main=build/electron.js",
     "format": "js-beautify --type js  -f ./src/*"
   }
 }
