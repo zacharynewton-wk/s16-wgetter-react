@@ -11,7 +11,7 @@ class ListBuilder extends Component {
   }
 
   shouldComponentUpdate (nextProps, nextState) {
-    return nextProps.cikList !== this.props.cikList ||
+    return this._arraysEqual(nextProps.cikList,this.props.cikList) ||
       nextState.cikInput !== this.state.cikInput;
   }
 
@@ -20,7 +20,7 @@ class ListBuilder extends Component {
       <div className="ListBuilder">
         <div className="input-wrapper">
             <input type="text" value={this.state.cikInput} name="cik" onInput={(e) => this.handleInput(e.target.value)} />
-            <button className="btn btn-primary" id="cik-add-btn">
+            <button className="btn btn-primary" onClick={() => this.addCik()}>
                 <i className="icon icon-plus"></i>
             </button>
         </div>
@@ -43,11 +43,22 @@ class ListBuilder extends Component {
   }
 
   addCik () {
-    this.props.removeCik(this.state.cikInput);
+    this.props.addCik(this.state.cikInput);
   }
 
   removeCik (index) {
     this.props.removeCik(index);
+  }
+
+  _arraysEqual(arr1, arr2) {
+    if(arr1.length !== arr2.length)
+        return false;
+    for(var i = arr1.length; i--;) {
+        if(arr1[i] !== arr2[i])
+            return false;
+    }
+
+    return true;
   }
 }
 
@@ -55,6 +66,12 @@ ListBuilder.propTypes = {
   cikList: PropTypes.array,
   removeCik: PropTypes.func,
   addCik: PropTypes.func
+};
+
+ListBuilder.defaultProps = {
+  cikList: [],
+  removeCik: () => {},
+  addCik: () => {}
 };
 
 export default ListBuilder;

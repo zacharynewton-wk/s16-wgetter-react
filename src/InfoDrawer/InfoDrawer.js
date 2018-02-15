@@ -38,7 +38,7 @@ class InfoDrawer extends Component {
           <h3>Feedback</h3>
           <p>Find a bug? Have a suggestion for a new or missing feature?</p>
           <p>Contact a developer for support, questions, comments, and concerns:</p>
-          <p>Zach Newton: <div>&nbsp;&nbsp;<i className="icon icon-feedback"></i>&nbsp;<a href="mailTo:zach.newton@workiva.com">zach.newton@workiva.com</a></div></p>
+          <p>Zach Newton: <br />&nbsp;&nbsp;<i className="icon icon-feedback"></i>&nbsp;<a href="mailTo:zach.newton@workiva.com">zach.newton@workiva.com</a></p>
         </div>
         <InfoDrawerButton onClick={() => this.toggleDrawer()} />
       </div>

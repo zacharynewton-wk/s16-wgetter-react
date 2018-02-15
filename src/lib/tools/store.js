@@ -1,6 +1,9 @@
-const electron = require('electron');
 const path = require('path');
-const fs = require('fs');
+const electron = window.require('electron');
+// eslint-disable-next-line
+const fs = electron.remote.require('fs');
+// eslint-disable-next-line
+const ipcRenderer  = electron.ipcRenderer;
 
 class Store {
   constructor(opts) {

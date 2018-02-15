@@ -40,7 +40,9 @@ class DirectoryInput extends Component {
     let path = remote.dialog.showOpenDialog(currentWindow, {
       properties: ['openDirectory', 'createDirectory']
     });
-    this.props.selectDirectory(path ? path[0] : null);
+    if (path && path[0]) {
+      this.props.selectDirectory(path[0]);
+    }
   }
 }
 
